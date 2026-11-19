@@ -99,17 +99,17 @@
     pdf: ["PDF document", 60 * KB, 9 * MB], doc: ["Word document", 25 * KB, 2 * MB],
     docx: ["Word document", 20 * KB, 4 * MB], xls: ["Excel spreadsheet", 20 * KB, 3 * MB],
     xlsx: ["Excel spreadsheet", 15 * KB, 6 * MB], ppt: ["PowerPoint", 300 * KB, 20 * MB],
-    pptx: ["PowerPoint", 300 * KB, 25 * MB], txt: ["Text file", 1 * KB, 150 * KB],
-    md: ["Markdown file", 1 * KB, 80 * KB], csv: ["CSV file", 2 * KB, 15 * MB],
-    json: ["JSON file", 1 * KB, 3 * MB], log: ["Log file", 2 * KB, 40 * MB],
+    pptx: ["PowerPoint", 300 * KB, 25 * MB], txt: ["Text File", 1 * KB, 150 * KB],
+    md: ["Markdown File", 1 * KB, 80 * KB], csv: ["CSV File", 2 * KB, 15 * MB],
+    json: ["JSON File", 1 * KB, 3 * MB], log: ["Log File", 2 * KB, 40 * MB],
     png: ["PNG image", 40 * KB, 8 * MB], jpg: ["JPEG image", 80 * KB, 7 * MB],
     jpeg: ["JPEG image", 80 * KB, 7 * MB], gif: ["GIF image", 20 * KB, 6 * MB],
     svg: ["SVG image", 1 * KB, 400 * KB], mp3: ["MP3 audio", 2 * MB, 14 * MB],
     wav: ["WAV audio", 8 * MB, 80 * MB], mp4: ["MP4 video", 8 * MB, 900 * MB],
     mov: ["QuickTime video", 15 * MB, 1500 * MB], zip: ["ZIP archive", 200 * KB, 300 * MB],
     rar: ["RAR archive", 200 * KB, 300 * MB], exe: ["Application", 300 * KB, 120 * MB],
-    dll: ["Application extension", 20 * KB, 15 * MB], tmp: ["Temporary file", 1 * KB, 30 * MB],
-    bak: ["Backup file", 50 * KB, 500 * MB], js: ["JavaScript file", 1 * KB, 900 * KB],
+    dll: ["Application extension", 20 * KB, 15 * MB], tmp: ["Temporary File", 1 * KB, 30 * MB],
+    bak: ["Backup File", 50 * KB, 500 * MB], js: ["JavaScript File", 1 * KB, 900 * KB],
     html: ["HTML document", 1 * KB, 600 * KB], css: ["CSS stylesheet", 1 * KB, 300 * KB],
   };
   function fmtSize(b) {
@@ -124,7 +124,7 @@
   function makeFile(name) {
     const m = /\.([^.]+)$/.exec(name);
     const ext = m ? m[1].toLowerCase() : "";
-    const [type, lo, hi] = KINDS[ext] || [ext ? ext.toUpperCase() + " file" : "File", 10 * KB, 10 * MB];
+    const [type, lo, hi] = KINDS[ext] || [ext ? ext.toUpperCase() + " File" : "File", 10 * KB, 10 * MB];
     const bytes = Math.exp(rand(Math.log(lo), Math.log(hi))); // log-uniform: small files are more common
     const modified = new Date(Date.now() - Math.floor(rand(1, 3 * 365)) * 86400000); // within the last 3 years
     return { name, cat: CATS[Math.floor(Math.random() * 3)], size: fmtSize(bytes), type, modified: fmtDate(modified) };
@@ -147,7 +147,7 @@
       if (!mine.length) {
         const empty = document.createElement("button");
         empty.type = "button"; empty.className = "file-row empty"; empty.tabIndex = -1;
-        empty.textContent = "No files here";
+        empty.textContent = "No Files here";
         box.appendChild(empty);
         return;
       }
