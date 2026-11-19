@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Deletionist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<main class="stage" id="stage">
+
+  <!-- Frame 1: start -->
+  <section class="screen active" id="frame-1" aria-label="Start">
+    <header class="header">
+      <div class="logo"><img src="assets/logo.svg" alt="Deletionist"></div>
+      <button class="btn btn--brand" data-action="donate">Buy us a cofee</button>
+    </header>
+    <div class="intro">
+      <div class="textbox"><p>Your helpful File cleaning assistant</p></div>
+      <div class="row">
+        <button class="btn btn--success btn--96" data-action="start">Start</button>
+        <img class="wiz" src="assets/wizard-opening.svg" alt="" width="66.56" height="110">
+        <button class="btn btn--error btn--96" data-action="exit">Exit</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Frame 2: upload -->
+  <section class="screen" id="frame-2" aria-label="Upload">
+    <header class="header">
+      <div class="logo"><img src="assets/logo.svg" alt="Deletionist"></div>
+      <button class="btn btn--brand" data-action="donate">Buy us a cofee</button>
+    </header>
+    <div class="body">
+      <div class="upload" id="upload-box">
+        <button class="upload-trigger" data-action="upload">
+          <img src="assets/file-upload.svg" alt="">
+          <span>Upload your handy dandy File </span>
+        </button>
+        <div class="upload-list" id="upload-list" aria-label="Uploaded files"></div>
+      </div>
+      <div class="right">
+        <div class="talk">
+          <div class="textbox"><p>Ahh yeeez give me more Files</p></div>
+          <div class="wizwrap"><img class="wiz" src="assets/wizard-money-pls.svg" alt="" width="82.2" height="110"></div>
+        </div>
+        <button class="btn btn--success btn--next" data-action="next-3">Next</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Frame 3: sorted file list + preview -->
+  <section class="screen" id="frame-3" aria-label="Review files">
+    <header class="header">
+      <div class="logo"><img src="assets/logo.svg" alt="Deletionist"></div>
+      <button class="btn btn--brand" data-action="donate">Buy us a cofee</button>
+    </header>
+    <div class="body">
+      <div class="list">
+        <div class="group" data-cat="good">
+          <h2 class="one"><img src="assets/indicator-good.svg" alt="">These files are good to go</h2>
+          <div class="rows"><button class="file-row">File placeholder name</button></div>
+        </div>
+        <div class="group" data-cat="review">
+          <h2 class="one"><img src="assets/indicator-review.svg" alt="">You should check these out</h2>
+          <div class="rows"><button class="file-row">File placeholder name</button></div>
+        </div>
+        <div class="group" data-cat="danger">
+          <h2><img src="assets/indicator-danger.svg" alt="">DO NOt DeLETE it i repeat
+DO NOT DELETE</h2>
+          <div class="rows"><button class="file-row">File placeholder name</button></div>
+        </div>
+      </div>
+      <div class="side">
+        <div class="preview">
+          <div class="meta">
+            <p class="pv-name">File name placeholder</p>
+            <p class="pv-size">Size: example</p>
+            <p class="pv-type">Type: placeholder</p>
+            <p class="pv-mod">Modified:dd/mm/yy</p>
+          </div>
+          <button class="btn btn--accent btn--look" data-action="preview">Take a look</button>
+        </div>
+        <button class="btn btn--success btn--next" data-action="next-4">Next</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Frame 4: files to delete -->
+  <section class="screen" id="frame-4" aria-label="Files to delete">
+    <header class="header">
+      <div class="logo"><img src="assets/logo.svg" alt="Deletionist"></div>
+      <button class="btn btn--brand" data-action="donate">Buy us a cofee</button>
+    </header>
+    <div class="body">
+      <div class="panel listbox">
+        <div class="inner">
+          <button class="file-row file-row--dark">File placeholder name</button>
+          <button class="file-row file-row--dark">File placeholder name</button>
+          <button class="file-row file-row--dark">File placeholder name</button>
+        </div>
+      </div>
+      <div class="actions">
+        <button class="btn btn--error" data-action="keep">Keep</button>
+        <button class="btn btn--success" data-action="delete">Delete</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Frame 5: all done -->
+  <section class="screen" id="frame-5" aria-label="Done">
+    <header class="header">
+      <div class="logo"><img src="assets/logo.svg" alt="Deletionist"></div>
+      <button class="btn btn--brand" data-action="donate">Buy us a cofee</button>
+    </header>
+    <div class="body">
+      <div class="talk">
+        <div class="textbox"><p>I think there is no more Files for me to practice my magic on</p></div>
+        <div class="wizslot"><img src="assets/wizard-sad-crop.svg" alt=""></div>
+      </div>
+      <div class="buttons">
+        <button class="btn btn--success btn--140" data-action="restart">Return to start</button>
+        <button class="btn btn--error btn--140" data-action="quit">Quit and close</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Overlays -->
+  <div class="backdrop" id="confirm">
+    <div class="overlay confirm" role="dialog" aria-label="Confirmation">
+      <p class="q">Are you sure?</p>
+      <div class="answers">
+        <button class="btn btn--success btn--72" data-action="yes">Yes</button>
+        <button class="btn btn--error btn--72" data-action="no">No</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="backdrop" id="donation">
+    <div class="overlay donation" role="dialog" aria-label="Donation">
+      <div class="t1"><p>Thank you for your generocity the wizzard appreciated it </p></div>
+      <img class="wiz" src="assets/wizard-money.svg" alt="">
+      <div class="t2"><p>(even tho he couldve casted a spell of unlimited money) </p></div>
+      <button class="close" data-action="close-overlay" aria-label="Close">X</button>
+    </div>
+  </div>
+
+  <div class="backdrop" id="loading">
+    <div class="overlay loading" role="dialog" aria-label="Loading">
+      <div class="bar"><i id="bar-fill"></i></div>
+      <img class="wiz" id="bar-wiz" src="assets/wizard-opening.svg" alt="">
+      <p class="msg">Keep waiting the file is loading</p>
+      <button class="close" data-action="close-overlay" aria-label="Close">X</button>
+    </div>
+  </div>
+
+  <div class="backdrop" id="error">
+    <div class="overlay error" role="alertdialog" aria-label="Error">
+      <img class="wiz" src="assets/wizard-sad.svg" alt="">
+      <div class="textbox"><p>Oh no it failed, lets try again </p></div>
+      <button class="btn btn--success btn--96" data-action="close-overlay">Okay</button>
+    </div>
+  </div>
+</main>
+
+<!-- Review switcher: jump to any of the 9 designs -->
+<nav class="nav" aria-label="Screens">
+  <a href="#frame-1">1 Start</a><a href="#frame-2">2 Upload</a><a href="#frame-3">3 Review</a>
+  <a href="#frame-4">4 Delete</a><a href="#frame-5">5 Done</a>
+  <a href="#confirm">Confirm</a><a href="#donation">Donation</a><a href="#loading">Loading</a><a href="#error">Error</a>
+</nav>
+
+<input type="file" id="file-input" hidden multiple>
+<script src="app.js"></script>
+</body>
+</html>
