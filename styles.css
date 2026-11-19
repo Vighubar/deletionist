@@ -129,6 +129,9 @@ button { font: inherit; cursor: pointer; }
 }
 .upload-trigger img { width: 40px; height: 44px; object-fit: fill; flex: none; }
 .upload-trigger span { width: 170px; }
+/* Figma upload Variant2 (hover) */
+.upload:hover { background: var(--brand-dark); border-color: var(--brand-text); }
+.upload:hover .upload-trigger img { filter: brightness(.62); }
 
 /* With files: icon + text shrink into a header row and the file squares sit inside the box */
 .upload-list { display: none; }
